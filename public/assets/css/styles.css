@@ -1,0 +1,10 @@
+#screen {
+  width: 512px;
+  height: 512px;
+
+  background: black;
+  border: 2px solid #555;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

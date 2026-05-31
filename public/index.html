@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Pet</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/index.js" type="module"></script>
+  </head>
+  <body>
+    <h2>Virtual Pet Status</h2>
+
+    <section id="stats">
+      <div>Health: <span id="health">...</span></div>
+      <div>hunger: <span id="hunger">...</span></div>
+      <div>energy: <span id="energy">...</span></div>
+      <div>fun: <span id="fun">...</span></div>
+    </section>
+
+    <p>State: <span id="pet-state">Waiting for data...</span></p>
+
+    <canvas id="screen" width="64" height="64"></canvas>
+
+    <button id="eat-button">Click to Eat</button>
+    <button id="play-button">Click to Play</button>
+    <button id="sleep-button">Click to Sleep</button>
+  </body>
+</html>
