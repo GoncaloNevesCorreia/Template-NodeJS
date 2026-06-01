@@ -1,17 +1,3 @@
-// export const Stats = {
-//   parse(data) {
-//     const buffer = atob(data);
-
-//     return {
-//       stateValue: buffer.charCodeAt(0),
-//       health: buffer.charCodeAt(1),
-//       hunger: buffer.charCodeAt(2),
-//       sleep: buffer.charCodeAt(3),
-//       fun: buffer.charCodeAt(4),
-//     };
-//   },
-// };
-
 class Stats {
   #healthEl;
   #hungerEl;

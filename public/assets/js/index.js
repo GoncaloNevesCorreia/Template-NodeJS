@@ -1,7 +1,16 @@
 import { States } from "./States.js";
 import { Stats } from "./Stats.js";
 
+const eatBtn = document.querySelector("#eat");
+const playBtn = document.querySelector("#play");
+const sleepBtn = document.querySelector("#sleep");
+
+eatBtn.addEventListener("click", () => Action("/eat"));
+playBtn.addEventListener("click", () => Action("/play"));
+sleepBtn.addEventListener("click", () => Action("/sleep"));
+
 const stats = new Stats();
+
 const states = new States();
 
 const eventSource = new EventSource("/stream");
@@ -15,38 +24,13 @@ eventSource.addEventListener("stats", function (event) {
   stats.update();
 });
 
-document.getElementById("eat-button").addEventListener("click", () => {
-  fetch("/eat", {
+function Action(endpoint) {
+  fetch(endpoint, {
     method: "POST",
-    // No body or headers needed since you requested an empty POST
   })
     .then((response) => response.text())
     .then((data) => {
       console.log("Server responded:", data);
     })
     .catch((error) => console.error("Error:", error));
-});
-
-document.getElementById("play-button").addEventListener("click", () => {
-  fetch("/play", {
-    method: "POST",
-    // No body or headers needed since you requested an empty POST
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log("Server responded:", data);
-    })
-    .catch((error) => console.error("Error:", error));
-});
-
-document.getElementById("sleep-button").addEventListener("click", () => {
-  fetch("/sleep", {
-    method: "POST",
-    // No body or headers needed since you requested an empty POST
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log("Server responded:", data);
-    })
-    .catch((error) => console.error("Error:", error));
-});
+}

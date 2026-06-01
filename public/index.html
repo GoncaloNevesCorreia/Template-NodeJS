@@ -8,21 +8,35 @@
     <script src="assets/js/index.js" type="module"></script>
   </head>
   <body>
-    <h2>Virtual Pet Status</h2>
+    <h2>Virtual Pet: <span id="status">OFFLINE</span></h2>
 
-    <section id="stats">
-      <div>Health: <span id="health">...</span></div>
-      <div>hunger: <span id="hunger">...</span></div>
-      <div>energy: <span id="energy">...</span></div>
-      <div>fun: <span id="fun">...</span></div>
-    </section>
+    <div class="container">
+      <section id="stats">
+        <div>
+          <img src="assets/img/health.png" width="32" height="30" />
+          <span id="health">???</span>
+        </div>
+        <div>
+          <img src="assets/img/apple.png" width="32" height="32" />
+          <span id="hunger">???</span>
+        </div>
+        <div>
+          <img src="assets/img/smile.png" width="32" height="30" />
+          <span id="fun">???</span>
+        </div>
+        <div>
+          <img src="assets/img/energy.png" width="32" height="32" />
+          <span id="energy">???</span>
+        </div>
+      </section>
 
-    <p>State: <span id="pet-state">Waiting for data...</span></p>
+      <canvas id="screen" width="48" height="48"></canvas>
 
-    <canvas id="screen" width="64" height="64"></canvas>
-
-    <button id="eat-button">Click to Eat</button>
-    <button id="play-button">Click to Play</button>
-    <button id="sleep-button">Click to Sleep</button>
+      <section id="buttons">
+        <button id="eat">EAT</button>
+        <button id="play">PLAY</button>
+        <button id="sleep">SLEEP</button>
+      </section>
+    </div>
   </body>
 </html>

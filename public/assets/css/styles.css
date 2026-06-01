@@ -1,10 +1,164 @@
+@font-face {
+  font-family: retro;
+  src: url(../fonts/8bitOperatorPlus8-Regular.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html * {
+  font-family: retro, Arial, "sans-serif" !important;
+  color: white;
+}
+
+body {
+  background: black;
+}
+
+h2 {
+  padding-top: 16px;
+  text-align: center;
+  line-height: 1em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  /* min-height: calc(100vh - 160px); */
+  min-height: calc(100dvh - 55px);
+}
+
+#stats {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1.5em;
+}
+
+#stats img {
+  pointer-events: none;
+  user-select: none;
+}
+
+#stats > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 2px solid white;
+  min-width: 128px;
+}
+
+#stats > div > span {
+  flex: 1;
+  text-align: center;
+}
+
+.screen-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 #screen {
-  width: 512px;
-  height: 512px;
+  width: auto;
+  height: auto;
+
+  max-width: 512px;
+  max-height: 512px;
 
   background: black;
-  border: 2px solid #555;
 
-  image-rendering: pixelated;
   image-rendering: crisp-edges;
+
+  flex-grow: 1;
+}
+
+#buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+#buttons button {
+  background: black;
+  padding: 8px 16px;
+  border: 2px solid white;
+  color: white;
+  font-size: min(2.5dvw, 2.5em);
+  cursor: pointer;
+  min-width: 150px;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    padding-top: 8px;
+  }
+
+  .container {
+    justify-content: flex-start;
+    padding: 16px 8px;
+  }
+
+  #stats {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #stats > div {
+    flex: 35%;
+  }
+
+  /* #screen {
+    max-width: 256px;
+    max-height: 256px;
+  } */
+
+  #buttons {
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  #buttons button {
+    min-width: 0;
+  }
+}
+
+@media (max-height: 720px) {
+  #buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  #buttons button {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+@media (max-height: 500px) {
+  #stats {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    font-size: min(4dvw, 1.5em);
+  }
+
+  #stats > div {
+    width: 100%;
+    max-width: 150px;
+    min-width: 0;
+  }
 }

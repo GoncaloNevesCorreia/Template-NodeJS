@@ -85,9 +85,18 @@ class Animate {
   #render = (now) => {
     this.#drawFrame();
 
+    if (this.#lastFrameTime === 0) {
+      this.#lastFrameTime = now;
+    }
+
     const animation = this.#animation;
 
     if (now - this.#lastFrameTime >= animation.delay) {
+      if (animation.once && this.#currentFrame + 1 >= animation.frames.length) {
+        this.#stop();
+        return;
+      }
+
       this.#currentFrame = (this.#currentFrame + 1) % animation.frames.length;
 
       this.#lastFrameTime = now;
