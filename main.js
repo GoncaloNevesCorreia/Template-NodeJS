@@ -13,7 +13,7 @@ const TOPIC_STATS = "virtual_pet/stats";
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-const client = mqtt.connect("mqtt://192.168.1.80:1883");
+const client = mqtt.connect("mqtt://localhost:1883");
 
 let webClients = [];
 
